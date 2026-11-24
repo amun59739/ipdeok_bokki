@@ -1,0 +1,664 @@
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+/* =========================
+   COMMON
+   공통 레이아웃
+========================= */
+
+.inner {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+
+/* 공통 섹션 타이틀 */
+
+.section-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+}
+
+.header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 로고 */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    width: auto;
+}
+
+
+/* 메뉴 아이콘 */
+
+.menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    width: 100%;
+    height: 500px;
+
+    /* 임시 배경색 */
+    background-color: #d9d9d9;
+
+    /* 이미지 임시 경로 */
+    background-image: url('../images/hero.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* =========================
+   SECTION 1
+   주문 버튼
+========================= */
+
+.section_1 {
+    width: 100%;
+    padding: 20px 0 60px;
+    background-color: #ffffff;
+}
+
+
+/* 주문 버튼 전체 영역 */
+
+.order-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* 주문 버튼 공통 스타일 */
+
+.order-btn {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    background-color: #e5e5e5;
+    border-radius: 8px;
+}
+
+
+/* 배달 주문하기 */
+
+.delivery {
+    grid-column: 1 / -1;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/* 전화 주문하기 */
+
+.phone {
+    background-color: #e5e5e5;
+}
+
+
+/* 쿠폰 사용 */
+
+.coupon {
+    background-color: #e5e5e5;
+}
+
+
+/* 주문 버튼 아이콘 */
+
+.order-btn svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   COMMON HASHTAG
+   공통 해시태그 버튼
+========================= */
+
+.hashtag-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.hashtag {
+    height: 35px;
+    padding: 0 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border: 1px solid #555555;
+    border-radius: 30px;
+
+    background-color: transparent;
+    color: #555555;
+}
+
+
+/* 활성화 해시태그 */
+
+.hashtag.active {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+
+/* =========================
+   SECTION 2
+   추천 메뉴
+========================= */
+
+.section_2 {
+    width: 100%;
+    padding: 80px 0 100px;
+
+    background-color: #f5f2ef;
+
+    /* 영역 밖으로 나가는 카드 숨기기 */
+    overflow: hidden;
+}
+
+
+/* 추천 메뉴 전체 영역 */
+
+.recommend-wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    /* 카드 하단 이미지 공간 확보 */
+    padding-bottom: 90px;
+}
+
+
+/* 추천 메뉴 개별 콘텐츠 */
+
+.recommend-item {
+    flex-shrink: 0;
+    width: 68%;
+    max-width: 340px;
+}
+
+
+/* 중앙 카드 위치 조정 */
+
+.recommend-item.current {
+    margin-top: 40px;
+}
+
+
+/* 추천 메뉴 배경 카드 */
+
+.recommend-card {
+    position: relative;
+
+    width: 100%;
+    height: 320px;
+
+    padding: 40px 16px 0;
+
+    background-color: #a6a19e;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+
+/* 추천 메뉴 서브 타이틀 */
+
+.recommend-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+
+/* 추천 메뉴 타이틀 */
+
+.recommend-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+
+    margin-bottom: 12px;
+}
+
+
+/* 추천 메뉴 설명 */
+
+.recommend-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+
+/* 추천 메뉴 이미지 */
+
+.recommend-img {
+    position: absolute;
+
+    left: 50%;
+    bottom: -70px;
+
+    transform: translateX(-50%);
+
+    width: 65%;
+    aspect-ratio: 1 / 1;
+
+    /* 임시 이미지 영역 */
+    background-color: #000000;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* 추천 메뉴 이미지 임시 경로 */
+
+.recommend-img01 {
+    background-image: url('../images/recommend01.png');
+}
+
+.recommend-img02 {
+    background-image: url('../images/recommend02.png');
+}
+
+.recommend-img03 {
+    background-image: url('../images/recommend03.png');
+}
+
+
+/* =========================
+   SECTION 3
+   메뉴
+========================= */
+
+.section_3 {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+
+/* 메뉴 콘텐츠 전체 영역 */
+
+.menu-wrap {
+    display: grid;
+
+    /* 가로 2열 배치 */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 16px;
+    row-gap: 24px;
+}
+
+
+/* 메뉴 개별 콘텐츠 */
+
+.menu-item {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* 메뉴 이미지 */
+
+.menu-img {
+    width: 100%;
+
+    /* 세로가 조금 더 긴 직사각형 */
+    aspect-ratio: 1 / 1.15;
+
+    /* 임시 이미지 배경색 */
+    background-color: #a6a19e;
+
+    border-radius: 8px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* 메뉴 이미지 임시 경로 */
+
+.menu-img01 {
+    background-image: url('../images/menu01.jpg');
+}
+
+.menu-img02 {
+    background-image: url('../images/menu02.jpg');
+}
+
+.menu-img03 {
+    background-image: url('../images/menu03.jpg');
+}
+
+.menu-img04 {
+    background-image: url('../images/menu04.jpg');
+}
+
+
+/* 메뉴 콘텐츠 타이틀 */
+
+.menu-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+
+    text-align: left;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   SECTION 4
+   새로운 소식
+========================= */
+
+.section_4 {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+
+/* 섹션 타이틀 */
+
+.section_4 .section-title {
+    margin-bottom: 8px;
+}
+
+
+/* 문단 */
+
+.section-desc {
+    font-size: 14px;
+    font-weight: 500;
+    color: #838383;
+
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+/* 탭 메뉴 전체 영역 */
+
+.tab-wrap {
+    display: flex;
+    width: 100%;
+
+    border-bottom: 1px solid #d9d9d9;
+}
+
+
+/* 탭 메뉴 버튼 */
+
+.tab-btn {
+    flex: 1;
+    height: 48px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #838383;
+
+    border-bottom: 2px solid transparent;
+}
+
+
+/* 활성화 탭 */
+
+.tab-btn.active {
+    font-weight: 700;
+    color: #000000;
+
+    border-bottom: 2px solid #000000;
+}
+
+
+/* 소식 콘텐츠 전체 영역 */
+
+.news-wrap {
+    width: 100%;
+}
+
+
+/* 소식 개별 콘텐츠 */
+
+.news-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 16px;
+    padding: 24px 0;
+
+    border-bottom: 1px solid #d9d9d9;
+}
+
+
+/* 소식 텍스트 영역 */
+
+.news-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* 콘텐츠 서브 타이틀 */
+
+.news-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555555;
+}
+
+
+/* 콘텐츠 타이틀 */
+
+.news-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+
+/* 콘텐츠 날짜 */
+
+.news-date {
+    font-size: 14px;
+    font-weight: 300;
+    color: #555555;
+}
+
+
+/* 화살표 아이콘 */
+
+.news-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+   모바일 화면
+========================= */
+
+@media screen and (max-width: 480px) {
+
+    /* 주문 버튼 */
+
+    .order-btn {
+        gap: 6px;
+    }
+
+    .order-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* 해시태그 버튼 */
+
+    .hashtag {
+        padding: 0 12px;
+    }
+
+
+    /* 추천 메뉴 */
+
+    .recommend-wrap {
+        gap: 16px;
+    }
+
+    .recommend-item {
+        width: 68%;
+    }
+
+    .recommend-card {
+        height: 300px;
+    }
+
+
+    /* 메뉴 */
+
+    .menu-wrap {
+        column-gap: 16px;
+        row-gap: 24px;
+    }
+
+}
+
+
+/* 작은 모바일 화면 */
+
+@media screen and (max-width: 360px) {
+
+    .order-btn {
+        font-size: 16px;
+    }
+
+    .hashtag {
+        padding: 0 10px;
+    }
+
+    .recommend-title {
+        font-size: 18px;
+    }
+
+}
