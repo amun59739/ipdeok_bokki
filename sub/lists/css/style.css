@@ -1,0 +1,583 @@
+
+/* =========================
+   DELIVERY PAGE
+   배달 리스트페이지
+========================= */
+
+.delivery-page {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+/* =========================
+   LIST HEADER
+========================= */
+
+.list-header {
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+}
+
+.list-header .inner {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-header-left,
+.list-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.list-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-header svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =========================
+   CATEGORY
+   카테고리 메뉴
+========================= */
+
+.category-scroll {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+    padding: 0 20px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    position: relative;
+
+    height: 55px;
+    flex-shrink: 0;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #838383;
+
+    white-space: nowrap;
+}
+
+.category-btn.active {
+    color: #000000;
+    font-weight: 700;
+}
+
+.category-btn.active::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background-color: #000000;
+}
+
+
+/* =========================
+   FILTER
+   필터 버튼
+========================= */
+
+.filter-scroll {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 16px 20px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    height: 40px;
+    padding: 0 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+    flex-shrink: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+
+    background-color: #ffffff;
+    white-space: nowrap;
+}
+
+.filter-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.filter-btn.active {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+
+/* =========================
+   SORT TITLE
+   정렬 기준
+========================= */
+
+.sort-title {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+    padding: 8px 20px 20px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sort-title svg {
+    width: 16px;
+    height: 16px;
+    color: #838383;
+}
+
+
+/* =========================
+   STORE
+   매장 콘텐츠
+========================= */
+
+.store-item {
+    width: 100%;
+    padding: 0 20px 24px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* 음식 이미지 가로 스크롤 */
+
+.food-scroll {
+    display: flex;
+    gap: 2px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.food-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* 개별 음식 이미지 */
+
+.food-card {
+    position: relative;
+
+    flex-shrink: 0;
+    width: 48%;
+
+    aspect-ratio: 4 / 3;
+
+    background-color: #b5b5b5;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* 이미지 하단 그라데이션 */
+
+.food-card::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0) 65%
+    );
+
+    pointer-events: none;
+}
+
+
+/* 음식 이미지 임시 경로 */
+
+.food11 {
+    background-image: url('../images/food11.jpg');
+}
+
+.food12 {
+    background-image: url('../images/food12.jpg');
+}
+
+.food13 {
+    background-image: url('../images/food13.jpg');
+}
+
+.food21 {
+    background-image: url('../images/food21.jpg');
+}
+
+.food22 {
+    background-image: url('../images/food22.jpg');
+}
+
+.food23 {
+    background-image: url('../images/food23.jpg');
+}
+
+
+/* 음식 이름 및 가격 */
+
+.food-caption {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    padding: 12px;
+
+    color: #ffffff;
+
+    z-index: 1;
+}
+
+.food-caption p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.food-price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.food-price strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.food-price del {
+    font-size: 12px;
+    font-weight: 400;
+    color: #eeeeee;
+}
+
+
+/* =========================
+   OFFER
+   보라색 할인 배너
+========================= */
+
+.offer {
+    width: 100%;
+    min-height: 36px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+    padding: 8px 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    background-color: #380bd0;
+    color: #ffffff;
+
+    border-radius: 0 0 10px 10px;
+}
+
+.offer svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   STORE INFO
+   매장 정보
+========================= */
+
+.store-info {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+    padding-top: 16px;
+}
+
+
+/* 매장 로고 */
+
+.store-logo {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: #d9d9d9;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.store-logo01 {
+    background-image: url('../images/store1.png');
+}
+
+.store-logo02 {
+    background-image: url('../images/store2.png');
+}
+
+
+/* 매장 텍스트 */
+
+.store-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.store-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.store-title h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.rating {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e8ad00;
+}
+
+.review-count {
+    font-size: 14px;
+    color: #838383;
+}
+
+
+/* 배달 시간, 거리, 배달비 */
+
+.store-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.store-meta span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.store-meta svg {
+    width: 16px;
+    height: 16px;
+}
+
+.delivery-fee {
+    font-weight: 700;
+    color: #380bd0;
+}
+
+
+/* 매장 태그 */
+
+.store-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.tag {
+    padding: 4px 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    background-color: #f0f0f0;
+    color: #555555;
+
+    border-radius: 4px;
+}
+
+.tag.membership {
+    color: #159c96;
+    background-color: #e8f8f7;
+    border: 1px solid #159c96;
+}
+
+.tag.new {
+    color: #e95b9e;
+    background-color: #fff0f7;
+}
+
+
+/* =========================
+   COUPON BANNER
+   쿠폰 프로모션
+========================= */
+
+.coupon-section {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.coupon-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+    padding: 20px;
+
+    min-height: 80px;
+
+    background-color: #edf0b3;
+    color: #747729;
+
+    border-radius: 16px;
+}
+
+.coupon-banner p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.coupon-banner svg {
+    width: 40px;
+    height: 40px;
+
+    color: #380bd0;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+   모바일 화면
+========================= */
+
+@media screen and (max-width: 480px) {
+
+    .list-header h1 {
+        font-size: 22px;
+    }
+
+    .category-scroll {
+        gap: 20px;
+    }
+
+    .category-btn {
+        font-size: 15px;
+    }
+
+    .food-card {
+        width: 48%;
+    }
+
+    .food-price strong {
+        font-size: 17px;
+    }
+
+    .food-price del {
+        font-size: 11px;
+    }
+
+    .food-caption {
+        padding: 10px;
+    }
+
+    .store-title h2 {
+        font-size: 18px;
+    }
+
+    .store-meta {
+        font-size: 12px;
+    }
+
+    .coupon-banner p {
+        font-size: 15px;
+    }
+
+}

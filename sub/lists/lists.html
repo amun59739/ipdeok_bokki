@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>배달 주문하기</title>
+
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="delivery-page">
+
+    <!-- HEADER -->
+
+    <header class="list-header">
+
+        <div class="inner">
+
+            <div class="list-header-left">
+
+                <!-- 메인페이지로 돌아가기 -->
+
+                <a href="index.html" aria-label="뒤로가기">
+                    <i data-lucide="arrow-left"></i>
+                </a>
+
+                <h1>음식배달</h1>
+
+            </div>
+
+            <div class="list-header-right">
+
+                <a href="#" aria-label="검색">
+                    <i data-lucide="search"></i>
+                </a>
+
+                <a href="#" aria-label="장바구니">
+                    <i data-lucide="shopping-cart"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CATEGORY : 카테고리 -->
+
+    <nav class="category-scroll">
+
+        <button type="button" class="category-btn">홈</button>
+
+        <button type="button" class="category-btn">중식</button>
+
+        <button type="button" class="category-btn active">치킨</button>
+
+        <button type="button" class="category-btn">카페·디저트</button>
+
+        <button type="button" class="category-btn">패스트푸드</button>
+
+        <button type="button" class="category-btn">분식</button>
+
+        <button type="button" class="category-btn">한식</button>
+
+    </nav>
+
+
+    <!-- FILTER : 필터 -->
+
+    <div class="filter-scroll">
+
+        <button type="button" class="filter-btn">
+            <i data-lucide="arrow-down-up"></i>
+            기본순
+        </button>
+
+        <button type="button" class="filter-btn">
+            <i data-lucide="badge-percent"></i>
+            배달팁 0원
+        </button>
+
+        <button type="button" class="filter-btn">
+            <i data-lucide="map-pin"></i>
+            2km 이내
+        </button>
+
+        <button type="button" class="filter-btn">
+            <i data-lucide="zap"></i>
+            할인·쿠폰
+        </button>
+
+    </div>
+
+
+    <main class="delivery-main">
+
+        <div class="sort-title">
+            기본순
+            <i data-lucide="info"></i>
+        </div>
+
+
+        <!-- STORE 01 : 첫 번째 매장 -->
+
+        <section class="store-item">
+
+            <!-- 음식 이미지 슬라이드 -->
+
+            <div class="food-scroll">
+
+                <a href="#" class="food-card food11">
+
+                    <div class="food-caption">
+
+                        <p>오븐치킨 (반반)</p>
+
+                        <div class="food-price">
+                            <strong>20,000원</strong>
+                            <del>23,000원</del>
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="food-card food12">
+
+                    <div class="food-caption">
+
+                        <p>바베큐 치킨</p>
+
+                        <div class="food-price">
+                            <strong>20,000원</strong>
+                            <del>23,000원</del>
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="food-card food13">
+
+                    <div class="food-caption">
+
+                        <p>후라이드 치킨</p>
+
+                        <div class="food-price">
+                            <strong>19,000원</strong>
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- 할인 배너 -->
+
+            <div class="offer">
+
+                <i data-lucide="zap"></i>
+                배달팁 할인 + 3,000원 즉시할인
+
+            </div>
+
+
+            <!-- 매장 정보 -->
+
+            <a href="#" class="store-info">
+
+                <div class="store-logo store-logo01"></div>
+
+                <div class="store-text">
+
+                    <div class="store-title">
+
+                        <h2>본스치킨</h2>
+
+                        <span class="rating">★ 5.0</span>
+
+                        <span class="review-count">(9)</span>
+
+                    </div>
+
+                    <div class="store-meta">
+
+                        <span>약 42분</span>
+
+                        <span class="delivery-fee">
+                            <i data-lucide="badge-percent"></i>
+                            2,400원
+                        </span>
+
+                        <span>
+                            <i data-lucide="map-pin"></i>
+                            2.3km
+                        </span>
+
+                        <span>최소주문 17,000원</span>
+
+                    </div>
+
+                    <div class="store-tags">
+
+                        <span class="tag membership">
+                            배달팁 0원 혜택
+                        </span>
+
+                        <span class="tag new">신규</span>
+
+                        <span class="tag">픽업가능</span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- COUPON BANNER : 쿠폰 배너 -->
+
+        <section class="coupon-section">
+
+            <a href="#" class="coupon-banner">
+
+                <p>곧 사라져요! 이번 주 한정 쿠폰 확인</p>
+
+                <i data-lucide="ticket-percent"></i>
+
+            </a>
+
+        </section>
+
+
+        <!-- STORE 02 : 두 번째 매장 -->
+
+        <section class="store-item">
+
+            <div class="food-scroll">
+
+                <a href="#" class="food-card food21">
+
+                    <div class="food-caption">
+
+                        <p>허니콤보</p>
+
+                        <div class="food-price">
+                            <strong>26,000원</strong>
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="food-card food22">
+
+                    <div class="food-caption">
+
+                        <p>반반콤보</p>
+
+                        <div class="food-price">
+                            <strong>26,000원</strong>
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="food-card food23">
+
+                    <div class="food-caption">
+
+                        <p>레드콤보</p>
+
+                        <div class="food-price">
+                            <strong>25,000원</strong>
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <div class="offer">
+
+                <i data-lucide="zap"></i>
+                배달팁 0원
+
+            </div>
+
+
+            <a href="#" class="store-info">
+
+                <div class="store-logo store-logo02"></div>
+
+                <div class="store-text">
+
+                    <div class="store-title">
+
+                        <h2>교촌치킨</h2>
+
+                        <span class="rating">★ 4.9</span>
+
+                        <span class="review-count">(128)</span>
+
+                    </div>
+
+                    <div class="store-meta">
+
+                        <span>약 35분</span>
+
+                        <span class="delivery-fee">
+                            배달팁 0원
+                        </span>
+
+                        <span>
+                            <i data-lucide="map-pin"></i>
+                            1.5km
+                        </span>
+
+                        <span>최소주문 20,000원</span>
+
+                    </div>
+
+                    <div class="store-tags">
+
+                        <span class="tag membership">무료배달</span>
+
+                        <span class="tag">픽업가능</span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Lucide 아이콘 실행
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+
+        // 카테고리 활성화
+
+        const categories = document.querySelectorAll('.category-btn');
+
+        categories.forEach(function(button) {
+
+            button.addEventListener('click', function() {
+
+                categories.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+
+                button.classList.add('active');
+
+            });
+
+        });
+
+
+        // 필터 활성화 및 해제
+
+        const filters = document.querySelectorAll('.filter-btn');
+
+        filters.forEach(function(button) {
+
+            button.addEventListener('click', function() {
+
+                button.classList.toggle('active');
+
+            });
+
+        });
+
+
+        // 임시 링크 이동 방지
+
+        document.querySelectorAll('a[href="#"]').forEach(function(link) {
+
+            link.addEventListener('click', function(event) {
+
+                event.preventDefault();
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
